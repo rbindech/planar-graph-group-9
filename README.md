@@ -4,7 +4,7 @@
 * **Course:** Informatics ITS Graph Theory class Group 9
 * **Group Members:**
   * Emmanuel SANTINI - 5999261124
-  * [Student Name 2 - NRP 2]
+  * Calixte BERTHIER - 5999261123
   * [Student Name 3 - NRP 3]
 
 ---
