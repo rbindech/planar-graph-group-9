@@ -10,6 +10,9 @@
 ---
 
 ## 2. Short explanation about algorithm
+
+### 1. Left-Right Planarity Test
+
 We implemented the **Left-Right (LR) Planarity Test** (de Fraysseix and Rosenstiehl, simplified by Brandes).
 
 Instead of searching for Kuratowski subgraphs or performing reductions, this algorithm checks whether the back-edges of a DFS tree can be partitioned into two distinct sides, **Left** and **Right**, without crossing:
@@ -17,6 +20,9 @@ Instead of searching for Kuratowski subgraphs or performing reductions, this alg
 2. **Nesting Depth:** Each edge receives a nesting order based on the reachability of its return points (`lowpt`).
 3. **Side Constraints:** The algorithm traverses the graph bottom-up and pushes edge constraints onto a stack. A graph is planar if every back-edge can be assigned to either the Left or Right side without contradiction. If an edge conflicts with both sides, the graph is non-planar.
 
+### 2. DMP Algorithm (Demoucron, Malgrange & Pertuiset)
+
+**$$$$$$$**
 
 ---
 
