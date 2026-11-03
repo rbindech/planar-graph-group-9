@@ -96,5 +96,5 @@ Graph 1 (V=6, E=9) : PLANAR
 ---
 
 ## 8. AI tools usage disclosure
-* **AI Tool Used:** Gemini (Google)
-* **Usage Description:** Used for drafting and formatting the documentation structure according to the assignment requirements, as well as summarizing the Left-Right planarity algorithm principles.
+
+AI tools were used to help structure the README, reformat algorithm explanations for clarity, and assist in drafting test cases. All core logic, graph algorithms, and validation checks were carried out by the team.
