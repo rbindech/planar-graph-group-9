@@ -116,10 +116,9 @@ def read_graphs_from_file(filename="graph.txt"):
         
     return graphs
 
-def run_planarity():
+def run_planarity(filename="Graph"):
     """Main function that will be called by main.py"""
     print("--- Planarity Test (Left-Right Algorithm) ---")
-    filename = "Graph"
     graphs = read_graphs_from_file(filename)
     
     if not graphs:
