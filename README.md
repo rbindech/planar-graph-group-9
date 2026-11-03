@@ -1,4 +1,4 @@
-# Informatics ITS Graph Theory class Group ...
+# Informatics ITS Graph Theory class Group 9
 
 ## 1. Identity
 * **Course:** Informatics ITS Graph Theory class Group 9
