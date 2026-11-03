@@ -4,8 +4,8 @@
 * **Course:** Informatics ITS Graph Theory class Group 9
 * **Group Members:**
   * Emmanuel SANTINI - 5999261124
-  * [Student Name 2 - NRP 2]
-  * [Student Name 3 - NRP 3]
+  * Rida BINDECH - 5999261011
+  * Calixte BERTHIER - 5999261123
 
 ---
 
@@ -22,7 +22,18 @@ Instead of searching for Kuratowski subgraphs or performing reductions, this alg
 
 ### 2. DMP Algorithm (Demoucron, Malgrange & Pertuiset)
 
-**$$$$$$$**
+We implemented the **DMP Planarity Test** (Demoucron, Malgrange and Pertuiset, 1964).
+
+Instead of looking for a forbidden subgraph, this algorithm tries to **build a planar drawing step by step**, face by face. If at some point a part of the graph cannot be placed in any face, the graph is non-planar:
+1. **Preprocessing:** If `E > 3V - 6` (with `V >= 3`), the graph is immediately non-planar (consequence of Euler's formula). Otherwise, the graph is split into its **biconnected components** (Tarjan's algorithm), because a graph is planar if and only if each of its biconnected components is planar. A component made of a single edge is always planar.
+2. **Initial cycle:** A DFS finds any cycle of the component (the first back-edge found closes it). This cycle is drawn first and splits the plane into **2 faces**: inside and outside.
+3. **Fragments:** The parts of the graph not drawn yet are grouped into fragments. A fragment is either a single edge whose two endpoints are already drawn (a *chord*), or a connected group of non-drawn vertices together with all the edges touching it. The drawn vertices a fragment touches are its **contact vertices**.
+4. **Admissible faces:** A fragment can be placed in a face only if the border of this face contains **all** of its contact vertices. If a fragment has no admissible face, the graph is **non-planar** and the algorithm stops.
+5. **Choice of the fragment:** A fragment with only one admissible face is placed first, since it has no other option. If every fragment has several admissible faces, any of them can be chosen: the DMP theorem guarantees that this choice never turns a planar graph into a failure.
+6. **Embedding:** A path is drawn through the chosen fragment between two of its contact vertices (found with a BFS). This path is drawn inside the chosen face and **splits it into two new faces**.
+7. **End:** Steps 3 to 6 are repeated until no fragment is left. The graph is then **planar**, and the program also displays the list of faces of each component. The number of faces always satisfies Euler's formula `F = E - V + 2`.
+
+**Complexity:** The original algorithm runs in `O(V²)`. Our implementation is simpler and recomputes all fragments after each embedded path, which makes it slower in theory (around `O(V³)`) but still fast for the graph sizes used in this project.
 
 ---
 
